@@ -8,3 +8,4 @@ Flask==2.0.3
 Werkzeug==2.0.3
 Flask-Cors==3.0.10
 python-dotenv==0.21.0
+kneed==0.7.0
