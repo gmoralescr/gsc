@@ -1,138 +1,225 @@
-.app-container {
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  background: #f2f7f0;
-}
+/* index.css */
 
-/* Navbar with left and right sections */
-.navbar {
-  display: flex;
-  justify-content: space-between; /* left side, right side */
-  align-items: center;
-  background-color: #00a76a;
-  color: white;
-  padding: 1rem;
-}
-
-.navbar-left h1 {
-  margin: 0;
-}
-
-.navbar-right {
-  display: flex;
-  align-items: center;
-}
-
-/* images in top-right corner */
-.header-logo {
-  height: 50px; /* adjust as needed */
-  margin-left: 1rem;
-}
-
-.form-container {
-  margin: 1rem;
-  position: relative;
-}
-
-.form-container form {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-}
-
-.form-container label {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.form-container input {
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-}
-
-button {
-  background-color: #00a76a;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-button:hover {
-  background-color: #008f5b;
-}
-
-.suggestions-list {
-  list-style-type: none;
+body {
   margin: 0;
   padding: 0;
-  max-width: 200px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  position: absolute;
-  z-index: 999;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: black;
+  position: relative;
+  color: white;
 }
 
-.suggestions-list li {
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.suggestions-list li:hover {
-  background-color: #f0f0f0;
-}
-
-.predictions-container {
-  margin: 1rem;
-}
-
-.predictions-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 1.5rem;
-}
-
-.prediction-card {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.breakdown-section {
-  margin: 2rem;
-}
-
-.chart-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.chart-container {
-  flex: 1 1 500px;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  min-width: 400px;
-  margin-bottom: 2rem;
-}
-
-.loading-bar-container {
+.background {
+  position: fixed; /* Fixed so the background stays in place */
+  top: 0;
+  left: 0;
   width: 100%;
-  background: #ddd;
-  height: 8px;
-  margin: 1rem 0;
-  border-radius: 4px;
-  overflow: hidden;
+  height: 100%;
+  background: url('http://127.0.0.1:5000/static/PURPLE.jpg') no-repeat center center/cover;
+  z-index: -2;
 }
 
-.loading-bar {
-  background: #00a76a;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background: black;
+  height: 120px; /* Consistent height */
+  box-sizing: border-box;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+}
+
+.logo-row img {
+  height: 90px;
+  margin-right: 20px;
+  object-fit: contain;
+}
+
+
+.header img {
+  height: 60px;
+  margin-right: 10px;
+}
+
+.manual {
+  background: purple;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.manual-content {
+  max-width: 900px;
+  margin: auto;
+  background-color: #f9f5ec;
+  color: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 80px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-box {
+  background: white;
+  padding: 15px;
+  display: inline-block;
+  border-radius: 8px;
+  margin: 10px;
+  color: black;
+  width: 50%;
+}
+
+.input-box input {
+  margin-left: 10px;
+  padding: 6px;
+  font-size: 16px;
   border-radius: 4px;
-  transition: width 0.2s ease;
+  border: 1px solid #ccc;
+}
+
+.predict-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: purple;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.predict-button:hover {
+  background: #800080;
+}
+
+/* Updated Predictions and Analytics Titles */
+.predictions,
+.analytics-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 80px;
+  padding: 30px 0;
+  background: black;
+}
+
+/* Updated Predictions Grid styling: wider boxes and flexible layout */
+.cookie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr)); /* Minimum width 400px */
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Updated cookie-box for horizontal layout (image on left) */
+.cookie-box {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;  /* Horizontal: image left, text right */
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cookie-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Updated image styling: larger image on the left */
+.cookie-box img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+/* Updated cookie-info: left-aligned text with larger fonts */
+.cookie-info {
+  text-align: left;
+}
+
+.cookie-info .cookie-name {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.cookie-info .predicted,
+.cookie-info .interval {
+  font-size: 20px;
+  margin: 4px 0;
+  color: #555;
+}
+
+/* Analytics section layout */
+.analysis-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.analysis-box {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-box h4 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
