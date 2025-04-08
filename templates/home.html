@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Forecasting Model</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <header class="header">
+    <div>
+      <img src="{{ url_for('static', filename='GSC(2).png') }}" alt="GSCI Logo" />
+      <img src="{{ url_for('static', filename='KREN.png') }}" alt="KREN Logo" />
+    </div>
+    <a href="manual.html" class="manual">Manual</a>
+  </header>
+
+  <h1 class="title">Cookie Forecasting Model</h1>
+  <p class="subtitle">Forecasting Sales, One Cookie at a Time</p>
+
+  <div class="input-container">
+    <p>Choose your starting point</p>
+    <button class="predict-button" onclick="location.href='{{ url_for('predict_page') }}'">New Troop</button>
+    <button class="predict-button" onclick="location.href='{{ url_for('predict_page') }}'">Returning Troop</button>
+  </div>
+</body>
+</html>
