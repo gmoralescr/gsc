@@ -17,7 +17,8 @@ import {
 import "./index.css";
 
 // Adjust this to point to your backend
-const API_BASE = "http://127.0.0.1:5000";
+const API_BASE = process.env.REACT_APP_API_BASE || "";
+
 
 /** Helper: convert period integer (e.g., 1, 2, 3...) to actual year (2019 + period) */
 function periodToYear(period) {
