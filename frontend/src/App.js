@@ -107,7 +107,7 @@ const cookies = [
             <img src={`${API_BASE}/static/KREN2.png`} alt="KREN2 Logo" style={{ height: '100px', marginRight: '20px' }} />
             <img src={`${API_BASE}/static/KREN.png`} alt="KREN Logo" style={{ height: '150px' }} />
           </div>
-          <button className="manual" onClick={onManual}>Manual</button>
+          
 
 
         </header>
