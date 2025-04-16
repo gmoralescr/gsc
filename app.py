@@ -15,7 +15,7 @@ from sklearn.linear_model import BayesianRidge
 warnings.simplefilter("ignore", category=RuntimeWarning)
 
 app = Flask(__name__, static_folder="static")
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "https://gscf.onrender.com"]}}, supports_credentials=True)
+CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "https://gscf.onrender.com", "https://gscb-giaw.onrender.com"]}}, supports_credentials=True)
 
 
 
